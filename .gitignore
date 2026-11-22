@@ -1,0 +1,32 @@
+# Зависимости
+node_modules
+
+# Папки сборки (для GitHub Pages деплоятся через gh-pages отдельно)
+dist
+dist-ssr
+
+# Файлы окружения (адрес сервера 1С и ключи)
+.env
+.env.*
+!.env.example
+
+# Логи
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Системные файлы и настройки редакторов
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local
