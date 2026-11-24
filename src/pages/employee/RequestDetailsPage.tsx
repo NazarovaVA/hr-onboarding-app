@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { PageHeader } from '../../components/layout/PageHeader';
+import { PageHeader } from '../../components/layout/PageHeader/PageHeader';
 import { Status } from '../../components/ui/Status/Status';
 import { InfoField } from '../../components/shared/InfoField/InfoField';
 import { Input } from '../../components/ui/Input/Input';
@@ -8,7 +8,7 @@ import { Textarea } from '../../components/ui/Textarea/Textarea';
 import { Button } from '../../components/ui/Button/Button';
 import { requestsApi } from '../../api/requestsApi';
 import type { RequestWithAnalytics } from '../../types/api';
-import cabinet from '../Cabinet.module.css';
+// import cabinet from '../Cabinet.module.css';
 
 export const RequestDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -97,13 +97,15 @@ export const RequestDetailsPage: React.FC = () => {
   };
 
   if (isLoading) {
-    return <p className={cabinet.emptyText}>Загрузка заявления...</p>;
+    // return <p className={cabinet.emptyText}>Загрузка заявления...</p>;
+    return <p>Загрузка заявления...</p>;
   }
 
   if (!request) {
     return (
       <div>
-        <p className={cabinet.emptyText}>Заявление не найдено</p>
+        {/* <p className={cabinet.emptyText}>Заявление не найдено</p> */}
+        <p>Заявление не найдено</p> 
         <Button variant="secondary" onClick={() => navigate('/my-requests')}>
           К списку заявлений
         </Button>
@@ -118,7 +120,8 @@ export const RequestDetailsPage: React.FC = () => {
         rightSlot={<Status status={request.status} />}
       />
 
-      <div className={cabinet.card}>
+      {/* <div className={cabinet.card}> */}
+      <div>
         {request.comment && (
           <div
             style={{
@@ -134,7 +137,8 @@ export const RequestDetailsPage: React.FC = () => {
         )}
 
         {isEditing ? (
-          <form onSubmit={handleSaveEdit} className={cabinet.form}>
+          // <form onSubmit={handleSaveEdit} className={cabinet.form}>
+          <form onSubmit={handleSaveEdit}>
             <InfoField
               label="Тип заявления"
               value={request.type === 'vacation' ? 'Отпуск' : 'Командировка'}
@@ -176,7 +180,8 @@ export const RequestDetailsPage: React.FC = () => {
               onChange={(e) => setReason(e.target.value)}
               required
             />
-            <div className={cabinet.actions}>
+            {/* <div className={cabinet.actions}> */}
+            <div>
               <Button type="submit" isLoading={isSubmitting}>
                 Сохранить и отправить повторно
               </Button>
@@ -211,7 +216,8 @@ export const RequestDetailsPage: React.FC = () => {
       </div>
 
       {!isEditing && (
-        <div className={cabinet.actions}>
+        // <div className={cabinet.actions}>
+        <div>
           {request.status === 'revision' && (
             <Button onClick={() => setIsEditing(true)}>Редактировать заявление</Button>
           )}

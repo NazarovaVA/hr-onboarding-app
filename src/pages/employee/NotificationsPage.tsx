@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { PageHeader } from '../../components/layout/PageHeader';
+import { PageHeader } from '../../components/layout/PageHeader/PageHeader';
 import { NotificationItem } from '../../components/shared/NotificationItem/NotificationItem';
 import { notificationsApi } from '../../api/notificationsApi';
 import type { NotificationItem as NotificationType } from '../../types/api';
-import cabinet from '../Cabinet.module.css';
+// import cabinet from '../Cabinet.module.css';
 
 export const NotificationsPage: React.FC = () => {
   const [items, setItems] = useState<NotificationType[]>([]);
@@ -27,11 +27,14 @@ export const NotificationsPage: React.FC = () => {
   return (
     <div>
       <PageHeader title="Уведомления" />
-      <div className={cabinet.list}>
+      {/* <div className={cabinet.list}> */}
+      <div>
         {isLoading ? (
-          <p className={cabinet.emptyText}>Загрузка уведомлений...</p>
+          // <p className={cabinet.emptyText}>Загрузка уведомлений...</p>
+          <p>Загрузка уведомлений...</p>
         ) : items.length === 0 ? (
-          <p className={cabinet.emptyText}>Уведомлений пока нет.</p>
+          // <p className={cabinet.emptyText}>Уведомлений пока нет.</p>
+          <p>Уведомлений пока нет.</p>
         ) : (
           items.map((item) => <NotificationItem key={item.id} item={item} />)
         )}

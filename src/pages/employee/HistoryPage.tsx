@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PageHeader } from '../../components/layout/PageHeader';
+import { PageHeader } from '../../components/layout/PageHeader/PageHeader';
 import { RequestCard } from '../../components/shared/RequestCard/RequestCard';
 import { requestsApi } from '../../api/requestsApi';
 import type { RequestWithAnalytics } from '../../types/api';
-import cabinet from '../Cabinet.module.css';
+// import cabinet from '../Cabinet.module.css';
 
 export const HistoryPage: React.FC = () => {
   const navigate = useNavigate();
@@ -26,11 +26,14 @@ export const HistoryPage: React.FC = () => {
   return (
     <div>
       <PageHeader title="История" />
-      <div className={cabinet.list}>
+      {/* <div className={cabinet.list}> */}
+      <div>
         {isLoading ? (
-          <p className={cabinet.emptyText}>Загрузка истории...</p>
+          // <p className={cabinet.emptyText}>Загрузка истории...</p>
+          <p>Загрузка истории...</p>
         ) : requests.length === 0 ? (
-          <p className={cabinet.emptyText}>История заявлений пуста.</p>
+          // <p className={cabinet.emptyText}>История заявлений пуста.</p>
+          <p>История заявлений пуста.</p>
         ) : (
           requests.map((req) => (
             <RequestCard

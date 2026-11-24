@@ -2,17 +2,17 @@ import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute } from './components/routing/ProtectedRoute';
-import { MainLayout } from './components/layout/MainLayout';
+import { MainLayout } from './components/layout/MainLayout/MainLayout';
 
-import { WelcomePage } from './pages/WelcomePage';
-import { LoginPage } from './pages/LoginPage';
+import { WelcomePage } from './pages/WelcomePage/WelcomePage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
 import { MyRequestsPage } from './pages/employee/MyRequestsPage';
 import { CreateRequestPage } from './pages/employee/CreateRequestPage';
 import { RequestDetailsPage } from './pages/employee/RequestDetailsPage';
 import { HistoryPage } from './pages/employee/HistoryPage';
 import { NotificationsPage } from './pages/employee/NotificationsPage';
-import { EmployerRequestsPage } from './pages/employer/EmployerRequestsPage';
-import { ApprovalPage } from './pages/employer/ApprovalPage';
+import { EmployerRequestsPage } from './pages/employer/EmployerRequestsPage/EmployerRequestsPage';
+import { ApprovalPage } from './pages/employer/ApprovalPage/ApprovalPage';
 
 export const App: React.FC = () => {
   return (

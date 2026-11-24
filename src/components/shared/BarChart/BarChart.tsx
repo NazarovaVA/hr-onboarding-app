@@ -1,29 +1,54 @@
-import React from 'react';
+import cn from 'classnames';
 import type { AbsenceMonthStat } from '../../../types/api';
+import styles from './BarChart.module.css';
 
-export const BarChart: React.FC<{ data: AbsenceMonthStat[] }> = ({ data }) => {
+interface BarChartProps {
+  data: AbsenceMonthStat[]; // Массив из 12 месяцев
+}
+
+const SHORT_MONTHS: Record<string, string> = {
+  Январь: 'Янв',
+  Февраль: 'Фев',
+  Март: 'Мар',
+  Апрель: 'Апр',
+  Май: 'Май',
+  Июнь: 'Июн',
+  Июль: 'Июл',
+  Август: 'Авг',
+  Сентябрь: 'Сен',
+  Октябрь: 'Окт',
+  Ноябрь: 'Ноя',
+  Декабрь: 'Дек',
+};
+
+export const BarChart = ({ data }: BarChartProps) => {
   const maxDays = Math.max(...data.map((d) => d.days), 1);
 
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-end', gap: '16px', height: '150px', paddingTop: '20px' }}>
+    <div className={styles.chart}>
       {data.map((item) => {
-        const heightPx = Math.max(Math.round((item.days / maxDays) * 100), 6);
+        const heightPx = item.days > 0 ? Math.max(Math.round((item.days / maxDays) * 105), 10) : 4;
+
         return (
-          <div key={item.month} style={{ flex: 1, textAlign: 'center' }}>
-            <div style={{ fontSize: '12px', marginBottom: '4px', fontWeight: 600 }}>{item.days} дн.</div>
+          <div key={item.month} className={styles.column}>
+            {/* Выводим число дней всегда, включая 0 */}
+            <span className={cn(styles.value, { [styles.valueEmpty]: item.days === 0 })}>
+              {item.days}
+            </span>
+
             <div
-              style={{
-                height: `${heightPx}px`,
-                backgroundColor: 'var(--primary)',
-                borderRadius: '6px 6px 0 0',
-              }}
+              className={cn(styles.bar, { [styles.barEmpty]: item.days === 0 })}
+              style={{ height: `${heightPx}px` }}
+              title={`${item.month}: ${item.days} дн.`}
             />
-            <div style={{ fontSize: '12px', marginTop: '6px', color: 'var(--text-muted)' }}>
-              {item.month}
-            </div>
+
+            <span className={styles.label}>
+              {SHORT_MONTHS[item.month] || item.month.slice(0, 3)}
+            </span>
           </div>
         );
       })}
     </div>
   );
 };
+

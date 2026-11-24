@@ -1,14 +1,13 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   width: 100%;
 }
 
 .label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-main);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 100%;
 }
 
 .wrapper {
@@ -19,28 +18,21 @@
 
 .control {
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 14px;
-  font-family: inherit;
-  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 28px;
+  background-color: #F3F6FB;
   color: var(--text-main);
   outline: none;
-  transition: border-color 0.2s;
-}
-
-.control:focus {
-  border-color: var(--primary);
 }
 
 .withIcon {
-  padding-right: 36px;
+  padding-right: 26px;
 }
 
 .iconBtn {
   position: absolute;
-  right: 10px;
+  right: 26px;
   background: none;
   border: none;
   cursor: pointer;
@@ -48,9 +40,9 @@
   color: var(--text-muted);
   display: flex;
   align-items: center;
-}
+} 
 
 .error {
   font-size: 12px;
-  color: var(--danger);
+  color: var(--text-dark);
 }

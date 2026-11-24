@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.approvalPageHeader {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card {
+  background-color: #F3F6FB;
+  border: 1px solid var(--text-dark);
+  border-radius: 15px;
+  padding: 25px 40px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.analyticsGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: stretch;
+  gap: 29px;
+}
+
+/* Делаем каждую из двух колонок flex-контейнером */
+.analyticsSection {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* А белую карточку внутри колонки растягиваем ровно на оставшееся место */
+.analyticsSection .card {
+  flex: 1;
+}
+
+.importanceText {
+  font-size: 28px;
+}
+
+.importancePercent {
+  font-size: 128px;
+}
+
+.recommendation {
+  font-size: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goodActions {
+  display: flex;
+  gap: 35px;
+}
+
+.approvalBtn {
+  padding: 15.5px 27px;
+  font-size: 24px;
+}
+
+.textarea {
+  font-family: Inter, Roboto, sans-serif;
+}

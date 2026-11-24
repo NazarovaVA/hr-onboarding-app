@@ -1,0 +1,70 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 270px;
+  padding: 40px 25px;
+  font-size: 28px;
+  background-color: var(--bg);
+}
+
+.userBlock {
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--text-dark);
+  padding-bottom: 20px;
+}
+
+.userName {
+  display: block;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.userRole {
+  color: var(--text-dark);
+  font-size: 20px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px 14px;
+  outline: none;
+  color: var(--text-main);
+  font-weight: 400;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.link:hover {
+  background-color: transparent;
+}
+
+.active {
+  color: var(--text-light);
+  background-color: var(--primary);
+}
+
+.active:hover {
+  background-color: var(--primary);
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 2px 7px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  background-color: var(--danger);
+}

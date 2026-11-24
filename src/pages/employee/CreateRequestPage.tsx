@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/authContextInstance';
 import { requestsApi } from '../../api/requestsApi';
 import type { RequestType, CreateRequestDto } from '../../types/api';
-import { PageHeader } from '../../components/layout/PageHeader';
+import { PageHeader } from '../../components/layout/PageHeader/PageHeader';
 import { Select } from '../../components/ui/Select/Select';
 import { Input } from '../../components/ui/Input/Input';
 import { Textarea } from '../../components/ui/Textarea/Textarea';
 import { Button } from '../../components/ui/Button/Button';
-import cabinet from '../Cabinet.module.css';
+// import cabinet from '../Cabinet.module.css';
 
 export const CreateRequestPage: React.FC = () => {
   const navigate = useNavigate();
@@ -54,8 +54,10 @@ export const CreateRequestPage: React.FC = () => {
   return (
     <div>
       <PageHeader title="Создание заявления" />
-      <div className={cabinet.card}>
-        <form onSubmit={handleSubmit} className={cabinet.form}>
+      {/* <div className={cabinet.card}> */}
+      <div>
+        {/* <form onSubmit={handleSubmit} className={cabinet.form}> */}
+         <form onSubmit={handleSubmit}>
           <Select
             label="Тип заявления"
             value={type}
@@ -108,7 +110,8 @@ export const CreateRequestPage: React.FC = () => {
             required
           />
 
-          <div className={cabinet.actions}>
+          {/* <div className={cabinet.actions}> */}
+          <div>
             <Button type="submit" isLoading={isSubmitting}>
               Создать заявление
             </Button>

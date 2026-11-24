@@ -1,21 +1,24 @@
-import React from 'react';
+// Наследуем стандартные атрибуты многострочного поля <textarea> (value, onChange, rows, required)
+import type { TextareaHTMLAttributes } from 'react';
+import cn from 'classnames';
 import styles from '../Input/Input.module.css';
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  label?: string;
-  error?: string;
+interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  label?: string; // Подпись над полем
+  error?: string; // Текст ошибки
 }
 
-export const Textarea: React.FC<TextareaProps> = ({
+export const Textarea = ({
   label,
   error,
-  className = '',
+  className,
   ...props
-}) => {
+}: TextareaProps) => {
   return (
-    <div className={`${styles.field} ${className}`}>
+    <div className={cn(styles.field)}>
       {label && <label className={styles.label}>{label}</label>}
-      <textarea className={styles.control} rows={4} {...props} />
+      {/* rows={4} задает стартовую высоту в 4 строки; при передаче другого rows в props он перезапишется */}
+      <textarea className={cn(styles.control, className)} rows={4} {...props} />
       {error && <span className={styles.error}>{error}</span>}
     </div>
   );

@@ -1,0 +1,45 @@
+.page {
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.imageWrapper {
+  display: grid;
+  place-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 50%;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.description {
+  font-size: 24px;
+}
+
+.loginBtn {
+  padding: 10.5px 106px;
+  font-size: 64px;
+  line-height: 77px;
+}

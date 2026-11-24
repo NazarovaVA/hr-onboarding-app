@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PageHeader } from '../../components/layout/PageHeader';
+import { PageHeader } from '../../components/layout/PageHeader/PageHeader';
 import { Button } from '../../components/ui/Button/Button';
 import { RequestCard } from '../../components/shared/RequestCard/RequestCard';
 import { requestsApi } from '../../api/requestsApi';
 import type { RequestWithAnalytics } from '../../types/api';
-import cabinet from '../Cabinet.module.css';
+// import cabinet from '../Cabinet.module.css';
 
 export const MyRequestsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -30,11 +30,14 @@ export const MyRequestsPage: React.FC = () => {
         title="Заявления"
         rightSlot={<Button onClick={() => navigate('/my-requests/new')}>+ Создать</Button>}
       />
-      <div className={cabinet.list}>
+      {/* <div className={cabinet.list}> */}
+      <div>
         {isLoading ? (
-          <p className={cabinet.emptyText}>Загрузка заявлений...</p>
+          // <p className={cabinet.emptyText}>Загрузка заявлений...</p>
+          <p>Загрузка заявлений...</p>
         ) : requests.length === 0 ? (
-          <p className={cabinet.emptyText}>У вас нет активных заявлений.</p>
+          // <p className={cabinet.emptyText}>У вас нет активных заявлений.</p>
+          <p>У вас нет активных заявлений.</p>
         ) : (
           requests.map((req) => (
             <RequestCard

@@ -1,0 +1,32 @@
+.filters {
+  display: flex;
+  gap: 30.7px;
+}
+
+.filter {
+  font-size: 24px;
+  line-height: 30.7px;
+  margin-bottom: 4.8px;
+}
+
+.filterInput {
+  height: 40px;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-bottom: 32.5px;
+  border-radius: 5px;
+}
+
+.filterInput option {
+  font-size: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.lkTitle {
+  font-size: 64px;
+}

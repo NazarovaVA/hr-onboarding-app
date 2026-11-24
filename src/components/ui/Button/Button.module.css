@@ -1,13 +1,8 @@
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 18px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.2s, opacity 0.2s;
 }
@@ -17,12 +12,24 @@
   cursor: not-allowed;
 }
 
-.primary { background-color: var(--primary); color: #fff; }
-.primary:hover:not(:disabled) { background-color: var(--primary-hover); }
+.primary { 
+  background-color: var(--primary); 
+  color: #fff; 
+}
 
-.secondary { background-color: var(--secondary); color: var(--text-main); }
-.secondary:hover:not(:disabled) { background-color: var(--secondary-hover); }
+.secondary { 
+  background-color: var(--secondary); 
+  color: var(--text-main); 
+}
 
-.success { background-color: var(--success); color: #fff; }
-.danger { background-color: var(--danger); color: #fff; }
-.ghost { background-color: transparent; color: var(--text-muted); padding: 6px 10px; }
+.withBorder { 
+  background-color: transparent;
+  color: #2D4E40; 
+  border: 1px solid #2D4E40;
+}
+
+.ghost { 
+  background-color: transparent; 
+  color: var(--text-dark); 
+  padding: 6px 10px; 
+}

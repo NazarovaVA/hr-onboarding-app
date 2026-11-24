@@ -1,0 +1,46 @@
+/* Внешний контейнер графика */
+.chart {
+  display: flex;
+  align-items: flex-end; /* Выравнивает все столбцы по нижней линии */
+  justify-content: space-between;
+  gap: 8px;
+  height: 100%;
+}
+
+/* Одна колонка месяца (цифра сверху + столбик + подпись снизу) */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0; /* Позволяет колонкам равномерно сжиматься, чтобы все 12 влезли в ряд */
+}
+
+/* Количество дней над столбиком */
+.value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+/* Сам столбик диаграммы */
+.bar {
+  width: 100%;
+  max-width: 24px;
+  background-color: var(--primary);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+}
+
+/* Если за месяц 0 дней отсутствий — делаем столбик бледно-серым, чтобы он не сливался с активными */
+.barEmpty {
+  background-color: var(--border);
+}
+
+/* Подпись месяца под столбиком */
+.label {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
